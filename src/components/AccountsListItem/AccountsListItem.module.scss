@@ -1,0 +1,55 @@
+@import '../../design-tokens/variables.scss';
+
+.item {
+  background: $primary-color-light;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  padding: $small-space;
+  transition: $transition-time;
+  font-weight: 500;
+  font-size: 0.8rem;
+
+  & .wrapper {
+    display: inline-flex;
+    align-items: center;
+
+    &-first {
+      grid-gap: $small-space / 2;
+    }
+
+    &-second {
+      font-weight: 700;
+      font-size: 1.1rem;
+      float: right;
+      display: inline;
+    }
+  }
+
+  &:hover {
+    color: $primary-color-red;
+    transform: translateX($medium-space / 2);
+    background: linear-gradient(180deg, #fd3a6c 0%, #f5855c 100%);
+    box-shadow: 0px 0px 7px #ee4874;
+    color: $primary-color-red;
+    list-style-type: disc;
+
+    & .circle {
+      background: $primary-color-light !important;
+      color: $primary-color-red;
+    }
+
+    & .wrapper {
+      color: $primary-color-light;
+    }
+  }
+
+  .circle {
+    color: $primary-color-light;
+    display: flex;
+    width: 28px;
+    height: 28px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+}

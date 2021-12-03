@@ -1,0 +1,45 @@
+@import './design-tokens/variables.scss';
+
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 100;
+  src: url(./fonts/Poppins/Poppins-Thin.ttf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 400;
+  src: url(./fonts/Poppins/Poppins-Regular.ttf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 500;
+  src: url(./fonts/Poppins/Poppins-Medium.ttf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 700;
+  src: url(./fonts/Poppins/Poppins-Bold.ttf) format('opentype');
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: $primary-color-dark;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style-type: none;
+}

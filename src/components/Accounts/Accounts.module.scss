@@ -1,0 +1,8 @@
+@import '../../design-tokens/variables.scss';
+
+.accounts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: $large-space / 2;
+}

@@ -1,0 +1,18 @@
+@import '../../design-tokens/variables.scss';
+
+.item {
+  font-weight: 400;
+  padding: $small-space 0;
+  transition: $transition-time;
+
+  &:hover {
+    color: $primary-color-red;
+    transform: translateX($small-space / 2);
+    list-style-type: disc;
+    list-style-position: inside;
+  }
+}
+
+.span {
+  margin-left: $small-space;
+}

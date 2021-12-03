@@ -1,0 +1,21 @@
+@import '../../design-tokens/variables.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: $small-space;
+  padding: {
+    left: $medium-space;
+    right: $medium-space * 2;
+  }
+
+  .title {
+    font-weight: 700;
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: $small-space;
+  }
+}

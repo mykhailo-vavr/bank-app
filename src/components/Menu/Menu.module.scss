@@ -1,0 +1,14 @@
+@import '../../design-tokens/variables.scss';
+
+.menu {
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: {
+    top: $large-space;
+    bottom: $medium-space;
+    left: $medium-space;
+  }
+  border-right: 1px solid $border-color;
+}
