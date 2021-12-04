@@ -1,32 +1,37 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useContext } from 'react';
+import { AccountsContext } from '../../context/accounts/accountsContext';
 import cls from './AccountsListItem.module.scss';
 
-const AccountsContainerItem = ({ account, index }) => {
-  const currencySigns = {
-    usd: 'dollar-sign',
-    eur: 'euro-sign',
-    gbp: 'pound-sign',
-    krw: 'won-sign'
+const AccountsContainerItem = ({ settings }) => {
+  const colors = ['#42507f', '#fd3a6c', ' #f5855c', '#ffac30'];
+  const { setAccount, currencySigns } = useContext(AccountsContext);
+
+  const onClick = () => {
+    setAccount(settings.account);
+    settings.setActiveItem(settings.account);
   };
 
-  const colors = ['#42507f', '#fd3a6c', ' #f5855c', '#ffac30'];
-
   return (
-    <li className={cls.item}>
+    <li
+      className={`${cls.item} ${
+        settings.activeItem === settings.account ? cls.active : ''
+      }`}
+      onClick={onClick}
+    >
       <span className={`${cls.wrapper} ${cls['wrapper-first']}`}>
         <span
           className={cls.circle}
-          style={{ background: colors[index] }}
+          style={{ background: colors[settings.index] }}
         >
-          <FontAwesomeIcon icon={currencySigns[account.currency]} />
+          {currencySigns[settings.account.currency]}
         </span>
-        {account.title}
+        {settings.account.title}
       </span>
 
       <span className={`${cls.wrapper} ${cls['wrapper-second']}`}>
-        <FontAwesomeIcon icon={currencySigns[account.currency]} />
-        {account.balance.toFixed(2)}
+        {`${
+          currencySigns[settings.account.currency]
+        }${settings.account.balance.toFixed(2)}`}
       </span>
     </li>
   );

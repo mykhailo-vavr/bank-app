@@ -1,0 +1,13 @@
+@import '../../design-tokens/variables.scss';
+
+.title {
+  margin-left: $medium-space;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.icon {
+  color: $primary-color-red;
+  margin-right: $small-space;
+  font-size: 1rem;
+}

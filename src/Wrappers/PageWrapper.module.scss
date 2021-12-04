@@ -1,0 +1,7 @@
+@import '../design-tokens/variables.scss';
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 5.5fr 7fr;
+  padding-top: $large-space / 2;
+}

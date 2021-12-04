@@ -2,12 +2,6 @@
 
 @font-face {
   font-family: 'Poppins';
-  font-weight: 100;
-  src: url(./fonts/Poppins/Poppins-Thin.ttf) format('opentype');
-}
-
-@font-face {
-  font-family: 'Poppins';
   font-weight: 400;
   src: url(./fonts/Poppins/Poppins-Regular.ttf) format('opentype');
 }
@@ -30,6 +24,10 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 13px;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   color: $primary-color-dark;
@@ -42,4 +40,28 @@ a {
 
 li {
   list-style-type: none;
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 1200px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 1440px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 2000px) {
+  html {
+    font-size: 19px;
+  }
 }

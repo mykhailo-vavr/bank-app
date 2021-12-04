@@ -1,0 +1,25 @@
+@import '../../design-tokens/variables.scss';
+
+.container {
+  border-radius: 40px 0px 0px 0px;
+  background: $primary-color-light;
+  padding: {
+    top: $large-space / 2;
+    right: $medium-space * 2;
+    bottom: $medium-space / 2;
+    left: $medium-space * 2;
+  }
+  display: grid;
+  grid-gap: $medium-space;
+  grid-template-rows: 1fr 1fr;
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+}

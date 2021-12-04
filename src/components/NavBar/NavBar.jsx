@@ -4,17 +4,17 @@ import NavBarItem from '../NavBarItem/NavBarItem';
 
 const NavBar = () => {
   const items = [
-    { icon: 'home', text: 'Home' },
-    { icon: 'paper-plane', text: 'Send Money' },
-    { icon: 'piggy-bank', text: 'Top Up' },
-    { icon: 'wallet', text: 'Accounts' }
+    { icon: 'home', text: 'Home', to: '/' },
+    { icon: 'paper-plane', text: 'Send Money', to: '/send' },
+    { icon: 'piggy-bank', text: 'Top Up', to: '/&' },
+    { icon: 'wallet', text: 'Accounts', to: '/$' }
   ];
 
   return (
     <nav>
       <ul>
-        {items.map(({ icon, text }) => (
-          <NavBarItem icon={icon} text={text} key={text} />
+        {items.map(({ icon, text, to }) => (
+          <NavBarItem settings={{ icon, text, to }} key={text} />
         ))}
       </ul>
     </nav>

@@ -1,0 +1,24 @@
+@import '../../design-tokens/variables.scss';
+
+.item {
+  display: flex;
+  align-items: center;
+  grid-gap: $small-space;
+  position: relative;
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .text {
+    font-size: 0.8rem;
+    color: $secondary-color-dark;
+    margin-top: 0.2rem;
+  }
+
+  &::after {
+    content: '\1433';
+    position: absolute;
+    right: 0;
+  }
+}

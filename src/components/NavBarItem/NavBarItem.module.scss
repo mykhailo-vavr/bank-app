@@ -1,18 +1,26 @@
 @import '../../design-tokens/variables.scss';
 
+@mixin active-item {
+  color: $primary-color-red;
+  transform: translateX($small-space / 2);
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
 .item {
   font-weight: 400;
   padding: $small-space 0;
   transition: $transition-time;
 
   &:hover {
-    color: $primary-color-red;
-    transform: translateX($small-space / 2);
-    list-style-type: disc;
-    list-style-position: inside;
+    @include active-item;
+  }
+
+  .span {
+    margin-left: $small-space;
   }
 }
 
-.span {
-  margin-left: $small-space;
+.active {
+  @include active-item;
 }

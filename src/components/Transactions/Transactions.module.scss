@@ -1,0 +1,13 @@
+@import '../../design-tokens/variables.scss';
+
+.transactions {
+  margin-top: $medium-space / 1.5;
+
+  .wrapper {
+    display: flex;
+    gap: $small-space;
+    margin-top: $small-space;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+  }
+}

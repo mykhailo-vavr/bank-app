@@ -1,0 +1,11 @@
+@import '../../design-tokens/variables.scss';
+
+.item {
+  padding: $small-space;
+  font-size: 0.8rem;
+  border-radius: 20px;
+  background: #f8f8f8;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+}

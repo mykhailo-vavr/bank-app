@@ -1,41 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import cls from './AccountsList.module.scss';
-import axios from 'axios';
 import AccountsListItem from '../AccountsListItem/AccountsListItem';
+import { APIContext } from '../../context/API/APIContext';
 
-const URL =
-  'https://vhmfz744o2.execute-api.eu-west-2.amazonaws.com/dev/data';
-
-const headers = {
-  'x-api-key': 'ieLWvByj0Z7obl0aLmVzmiJgbjVXZf987aoRts59'
-};
-
-const AccountsContainer = () => {
-  const [accounts, setAccounts] = useState([]);
+const AccountsList = () => {
+  const { state, fetchAccounts } = useContext(APIContext);
+  const [activeItem, setActiveItem] = useState(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(URL, {
-          headers
-        });
-        setAccounts(response.data.body.accounts);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    fetchData();
+    fetchAccounts();
+    // eslint-disable-next-line
   }, []);
-
   return (
     <div className={cls.container}>
-      <h3 className={cls.title}>Your accounts</h3>
       <ul className={cls.list}>
-        {accounts.map((account, index) => (
+        {state.accounts.map((account, index) => (
           <AccountsListItem
-            account={account}
             key={account.title}
-            index={index}
+            settings={{
+              account,
+              index,
+              activeItem,
+              setActiveItem
+            }}
           />
         ))}
       </ul>
@@ -43,4 +30,4 @@ const AccountsContainer = () => {
   );
 };
 
-export default AccountsContainer;
+export default AccountsList;

@@ -1,19 +1,24 @@
 import React from 'react';
-import Main from '../Main/Main';
+import Home from '../../Pages/Home/Home';
+import SendMoney from '../../Pages/SendMoney/SendMoney';
+import NotFoundPage from '../../Pages/NotFoundPage/NotFoundPage';
 import Menu from '../Menu/Menu';
+import { Routes, Route } from 'react-router-dom';
 import cls from './App.module.scss';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
-  faDollarSign,
-  faEuroSign,
+  faCheckSquare,
+  faCoins,
+  faCreditCard,
+  faHandHoldingUsd,
   faHome,
   faPaperPlane,
   faPiggyBank,
-  faPoundSign,
   faUserCircle,
-  faWallet,
-  faWonSign
+  faWallet
 } from '@fortawesome/free-solid-svg-icons';
+import APIState from '../../context/API/APIState';
+import AccountsState from '../../context/accounts/AccountsState';
 
 library.add(
   faHome,
@@ -21,17 +26,25 @@ library.add(
   faPiggyBank,
   faWallet,
   faUserCircle,
-  faWonSign,
-  faDollarSign,
-  faEuroSign,
-  faPoundSign
+  faCreditCard,
+  faHandHoldingUsd,
+  faCheckSquare,
+  faCoins
 );
 
 function App() {
   return (
     <div className={cls.app}>
       <Menu />
-      <Main />
+      <APIState>
+        <AccountsState>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/send" element={<SendMoney />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </AccountsState>
+      </APIState>
     </div>
   );
 }

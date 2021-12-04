@@ -2,5 +2,14 @@
 
 .footer {
   border-radius: 40px 0px 0px 0px;
-  border: 1px solid $border-color;
+  padding: $medium-space;
+  display: flex;
+  flex-direction: column;
+  grid-gap: $medium-space;
+  align-self: end;
+
+  border: {
+    top: 1px solid $border-color;
+    left: 1px solid $border-color;
+  }
 }

@@ -1,0 +1,34 @@
+@import '../../design-tokens/variables.scss';
+$radius: 30px;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
+  &-item {
+    padding: $medium-space / 1.2;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid $secondary-color-light;
+
+    &_top {
+      border-radius: $radius $radius 0 0;
+      border-bottom: none;
+    }
+
+    &_bottom {
+      border-radius: 0 0 $radius $radius;
+    }
+
+    .left-side {
+      display: grid;
+      align-items: center;
+      grid-template-columns: $small-space auto;
+      grid-gap: $small-space;
+    }
+
+    .right-side {
+      font-weight: 700;
+    }
+  }
+}
